@@ -248,7 +248,7 @@ public extension UIScrollView {
             frame.origin.y = self.contentSize.height
             self.noMoreDataFooter!.frame = frame
         }
-        self.noMoreDataFooter?.alpha = 0
+        self.noMoreDataFooter?.alpha = 1
         self.noMoreDataFooter?.isHidden = false
     }
     
@@ -297,7 +297,8 @@ public extension UIScrollView {
                             }
                             
                             if trueOffset < (self.noMoreDataFooter?.frame.height ?? 0) {
-                                self.noMoreDataFooter?.alpha = trueOffset / (self.noMoreDataFooter?.frame.height ?? 40.0)
+//                                self.noMoreDataFooter?.alpha = trueOffset / (self.noMoreDataFooter?.frame.height ?? 40.0)
+                                self.noMoreDataFooter?.alpha = 1
                             } else if trueOffset > (self.noMoreDataFooter?.frame.height ?? 0) {
                                 self.noMoreDataFooter?.alpha = 1
                             }
@@ -321,7 +322,8 @@ public extension UIScrollView {
                                 }
                                 
                                 if height - distanceFromBottom < (self.noMoreDataFooter?.frame.height ?? 0) {
-                                    self.noMoreDataFooter?.alpha = (height - distanceFromBottom) / (self.noMoreDataFooter?.frame.height ?? 40.0)
+//                                    self.noMoreDataFooter?.alpha = (height - distanceFromBottom) / (self.noMoreDataFooter?.frame.height ?? 40.0)
+                                    self.noMoreDataFooter?.alpha = 1
                                 } else if height - distanceFromBottom > (self.noMoreDataFooter?.frame.height ?? 0) {
                                     self.noMoreDataFooter?.alpha = 1
                                 }
